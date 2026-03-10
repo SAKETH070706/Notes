@@ -1,0 +1,306 @@
+/* Main App */
+.notes-app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+}
+
+/* Header */
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.notes-header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.new-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.new-btn:hover {
+  background: #1e40af;
+}
+
+/* Main Layout */
+.main {
+  display: flex;
+  flex: 1;
+  gap: 15px;
+  padding: 15px;
+}
+
+/* Note List */
+.note-list {
+  width: 250px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.note-list h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.note-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.note-item {
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.note-item:hover {
+  background: #f9f9f9;
+  border-color: #2563eb;
+}
+
+.note-item.selected {
+  background: #eef2ff;
+  border-color: #2563eb;
+}
+
+.note-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.note-item p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* Editor Area */
+.editor-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor.empty {
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+.note-title {
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px solid #eee;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+.note-title:focus {
+  border-bottom-color: #2563eb;
+}
+
+.note-body {
+  flex: 1;
+  border: none;
+  padding: 10px 0;
+  resize: none;
+  font-size: 14px;
+  line-height: 1.6;
+}
+/* Trash Button */
+.trash-btn {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+}
+
+.trash-btn:hover {
+  border-color: #2563eb;
+  background: #f0f4ff;
+}
+
+.trash-btn.active {
+  background: #fee2e2;
+  border-color: #dc2626;
+}
+
+.trash-badge {
+  background: #dc2626;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Trash Container */
+.trash-container {
+  flex: 1;
+  padding: 20px;
+  background: #f5f5f5;
+  overflow-y: auto;
+}
+
+.trash-header {
+  margin-bottom: 20px;
+}
+
+.trash-header h2 {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+}
+
+.trash-header p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.trash-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #999;
+  font-size: 16px;
+}
+
+/* Trash Grid */
+.trash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.trash-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.2s;
+}
+
+.trash-card:hover {
+  border-color: #2563eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trash-card-content {
+  flex: 1;
+}
+
+.trash-card-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trash-card-content p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.trash-card-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.restore-btn {
+  flex: 1;
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+  color: #1e40af;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.restore-btn:hover {
+  background: #bfdbfe;
+}
+
+.delete-btn {
+  flex: 1;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+}
