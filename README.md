@@ -42,6 +42,6 @@ A simple and intuitive **note-taking web application** built with **React** and 
    - npm install
 4. Run the app locally:
    -npm run dev
-5. 
+5. 5. Open the app in your browser at http://localhost:5173
 
    
